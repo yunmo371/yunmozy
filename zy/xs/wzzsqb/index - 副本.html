@@ -1,0 +1,95 @@
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+    <!-- ... 其他头部内容保持不变 ... -->  
+    <style>  
+        /* ... 其他样式保持不变 ... */  
+  
+        /* 移除或注释掉下面的.dark-theme body样式，因为我们将在JavaScript中直接设置 */  
+        /*  
+        .dark-theme body {  
+            background-color: #444; /* 黑暗模式背景色 */  
+            color: #fff; /* 黑暗模式文字色 */  
+        }  
+        */  
+  
+        /* 其他样式... */  
+    </style>  
+</head>  
+<body>  
+    <!-- ... 其他内容保持不变 ... -->  
+  
+    <script>  
+        let currentTheme = localStorage.getItem('theme') || 'light'; // 默认主题为light  
+  
+        function toggleTheme() {  
+            const body = document.body;  
+            let newTheme;  
+  
+            // 根据当前主题决定下一个主题  
+            switch (currentTheme) {  
+                case 'light':  
+                    newTheme = 'gray';  
+                    body.style.backgroundColor = '#ccc'; // 灰色背景  
+                    body.style.color = '#333'; // 保持默认文字色或根据需要调整  
+                    break;  
+                case 'gray':  
+                    newTheme = 'dark';  
+                    body.style.backgroundColor = '#444'; // 黑暗模式背景色  
+                    body.style.color = '#fff'; // 黑暗模式文字色  
+                    break;  
+                case 'dark':  
+                    newTheme = 'light';  
+                    body.style.backgroundColor = '#fff'; // 明亮模式背景色  
+                    body.style.color = '#333'; // 明亮模式文字色  
+                    break;  
+                default:  
+                    newTheme = 'light'; // 如果不是已知主题，则默认为明亮模式  
+                    body.style.backgroundColor = '#fff';  
+                    body.style.color = '#333';  
+            }  
+  
+            // 更新当前主题  
+            currentTheme = newTheme;  
+            localStorage.setItem('theme', currentTheme);  
+  
+            // 切换图标（如果需要的话，这部分可以保持不变）  
+            const toggleButton = document.querySelector('.theme-toggle');  
+            const sunIcon = toggleButton.querySelector('.fa-sun');  
+            const moonIcon = toggleButton.querySelector('.fa-moon');  
+  
+            // 注意：这里我们不再隐藏/显示太阳和月亮图标，因为我们有三种模式  
+            // 但如果你想要特定的图标与每种模式关联，你需要添加更多的逻辑  
+  
+            // 假设我们只在明亮和黑暗模式之间切换图标，灰色模式使用太阳或月亮图标（根据需要选择）  
+            if (newTheme === 'dark') {  
+                sunIcon.style.display = 'none';  
+                moonIcon.style.display = 'block';  
+                moonIcon.style.transform = 'rotate(-90deg)'; // 如果需要旋转月亮图标  
+            } else {  
+                sunIcon.style.display = 'block';  
+                moonIcon.style.display = 'none';  
+            }  
+        }  
+  
+        document.addEventListener('DOMContentLoaded', () => {  
+            // 根据localStorage中的主题设置初始样式  
+            if (currentTheme === 'dark') {  
+                document.body.style.backgroundColor = '#444';  
+                document.body.style.color = '#fff';  
+                // 设置图标状态（如果需要的话）  
+                const toggleButton = document.querySelector('.theme-toggle');  
+                toggleButton.querySelector('.fa-sun').style.display = 'none';  
+                toggleButton.querySelector('.fa-moon').style.display = 'block';  
+                toggleButton.querySelector('.fa-moon').style.transform = 'rotate(-90deg)'; // 如果需要旋转月亮图标  
+            } else if (currentTheme === 'gray') {  
+                // 设置灰色主题样式（如果需要的话）  
+                document.body.style.backgroundColor = '#ccc';  
+                // 注意：这里我们没有为灰色主题特别设置文字色，因为它可能是默认的#333  
+                // 但你可以根据需要添加  
+            }  
+            // 明亮模式不需要额外的设置，因为它是默认的  
+        });  
+    </script>  
+</body>  
+</html>

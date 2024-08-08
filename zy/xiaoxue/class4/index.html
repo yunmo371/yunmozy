@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunmo的索引页</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00d9ff;
+            background: #000;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 30px;
+            animation: textGlow 2s infinite alternate;
+        }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff, 0 0 30px #00d9ff, 0 0 40px #00d9ff; }
+            to { text-shadow: 0 0 20px #00d9ff, 0 0 30px #00d9ff, 0 0 40px #00d9ff, 0 0 50px #00d9ff; }
+        }
+        nav a {
+            display: block;
+            margin: 10px 0;
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+            position: relative;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00d9ff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+        nav a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        nav a:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #00d9ff;
+            z-index: 1;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    <div class="container">
+        <h1>欢迎来到Yunmo的索引页</h1>
+        <nav>
+            <a href="wcc/index.html" target="_blank">wcc</a>
+            <a href="cxr/index.html" target="_blank">cxr</a>
+            <a href="hhzgg/index.html" target="_blank">hhzgg</a>
+        </nav>
+    </div>
+    <footer>
+        <p>&copy; 2024 YUNMO</p>
+    </footer>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = Array(256).join(1).split('');
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px Courier';
+
+            letters.forEach((y, index) => {
+                const text = String.fromCharCode(65 + Math.random() * 33);
+                const x = index * fontSize;
+                ctx.fillText(text, x, y);
+
+                if (y > 100 + Math.random() * 1e4) {
+                    letters[index] = 0;
+                } else {
+                    letters[index] = y + fontSize;
+                }
+            });
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>
