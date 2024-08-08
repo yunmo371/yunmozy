@@ -1,0 +1,168 @@
+<!DOCTYPE html>    
+<html lang="zh-CN">    
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>好歌推荐</title>    
+    <style>    
+        :root {    
+            --base-font-size: 16px; /* 定义基础字体大小 */    
+        }    
+    
+        /* 定义自定义字体 */  
+        @font-face {  
+            font-family: 'ZQKFreeFont'; /* 自定义字体名称 */  
+            src: url('zt/ZQKfreefont.ttf') format('truetype'); /* 字体文件路径和格式 */  
+        }  
+    
+        body {    
+            font-family: 'SimSun', Arial, sans-serif; /* 设置默认字体为宋体 */    
+            font-size: calc(var(--base-font-size) * 1.2); /* 加大字体大小 */    
+            margin: 0;    
+            padding: 0;    
+            background-color: #ffffff;    
+            color: #000000;    
+            transition: background-color 0.5s, color 0.5s;    
+        }    
+    
+        /* 应用自定义字体到标题 */  
+        h1 {  
+            font-family: 'ZQKFreeFont', 'SimSun', Arial, sans-serif; /* 先尝试使用自定义字体，如果不可用则回退到宋体 */  
+        }  
+    
+        .container {    
+            width: 80%;    
+            margin: 0 auto;    
+            padding: 40px 20px;    
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+        }    
+    
+        header, footer {    
+            text-align: center;    
+            padding: 20px;    
+        }    
+    
+        h1, h2, p {    
+            margin: 0 0 10px 0; /* 调整标题和段落的间距 */    
+        }    
+    
+        .post {    
+            margin-top: 30px;    
+        }    
+    
+        footer {    
+            background-color: #333;    
+            color: #fff;    
+        }    
+    
+        #toggleButton {    
+            position: fixed;    
+            top: 20px;    
+            right: 20px;    
+            width: 50px;    
+            height: 50px;    
+            cursor: pointer;    
+            border: none;    
+            outline: none;    
+            background-color: #fff;    
+            border-radius: 50%;    
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);    
+        }    
+    
+        #toggleButton::before {    
+            /* 切换按钮的SVG图标代码（省略） */  
+        }    
+    
+        .dark-mode {    
+            background-color: #000000;    
+            color: #ffffff;    
+        }    
+    
+        .dark-mode .container {    
+            background-color: #333333;    
+        }    
+    
+        /* 其他样式可以根据需要添加 */    
+    </style>    
+</head>    
+<body>    
+    <div class="container">    
+        <header>    
+            <h1>好歌推荐（YUNMO团队）</h1>    
+        </header>    
+        <div class="post">  
+            <h2><a href="https://music.163.com/#/song?id=1844441197">五四版《错位时空》</a></h2>  
+            <p>站内播放</p>  
+            <p>1. 网易云音乐播放</p>  
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1844441197&auto=1&height=66"></iframe>  
+            <p>2. 本站播放</p>  
+            <audio controls>  
+                <source src="五四版错位时空.m4a" type="audio/mp4"> <!-- 注意：m4a应为audio/mp4 -->  
+                您的浏览器不支持 audio 元素。  
+            </audio>  
+  
+            <div style="position: relative; padding-top: 56.25%;"> <!-- 16:9的宽高比 -->  
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://player.bilibili.com/player.html?isOutside=true&aid=930471477&bvid=BV1jK4y1d7mE&cid=333614548&p=1" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>  
+            </div>  
+  
+            <p>歌词</p>  
+            <p>五四特别版错位时空</p>  
+            <p>奥运版错位时空</p>  
+            <p>作词 : 许诺</p>  
+            <p>作曲 : 张博文</p>  
+            <p>原唱：艾辰</p>  
+            <p>演唱：排骨教主</p>  
+            <p>那一年你和我一样年纪</p>  
+            <p>年轻得像首青涩的歌曲</p>  
+            <p>但为了创造梦中那个新天地</p>  
+            <p>你转身 匆匆走进风雨</p>  
+            <p>我看见千万个可爱的你</p>  
+            <p>不回头向硝烟深处奔去</p>  
+            <p>多少个青春背影消失在夜里</p>  
+            <p>换来晨曦</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>穿过百年时空再相逢</p>  
+            <p>你转过身之前的那个笑容</p>  
+            <p>我都懂</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>脚下大地已换了时空</p>  
+            <p>你留在风中摇曳的那抹红</p>  
+            <p>在心中 心中</p>  
+            <p>举起手我说出同样誓言</p>  
+            <p>黑白间你的笑容多清晰</p>  
+            <p>你说你从来也不后悔把一生</p>  
+            <p>奉献给 这片辽阔大地</p>  
+            <p>我多想伸手紧紧拥抱你</p>  
+            <p>告诉你一切都尘埃落定</p>  
+            <p>百年前你梦想的那个新中国</p>  
+            <p>有多美丽</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>穿过百年时空再相逢</p>  
+            <p>在此刻我们总会心灵相通</p>  
+            <p>我都懂</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>脚下大地已换了时空</p>  
+            <p>你留在风中摇曳的那抹红</p>  
+            <p>在心中 心中</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>穿过百年时空再相逢</p>  
+            <p>在此刻我们总会心灵相通</p>  
+            <p>我都懂</p>  
+            <p>我仰望你看过的星空</p>  
+            <p>脚下大地已换了时空</p>  
+            <p>你留在风中摇曳的那抹红</p>  
+            <p>在心中 心中</p>  
+            <p>歌词来自网易云音乐，本站进做引用，不负法律责任。</p>   
+        </div>  
+        <footer>    
+            <p>版权所有 &copy; 2024 YUNMO</p>    
+        </footer>    
+        <div id="toggleButton"></div>    
+    </div>    
+    <script>    
+        document.getElementById('toggleButton').addEventListener('click', function() {    
+            document.body.classList.toggle('dark-mode');    
+        });    
+    </script>    
+</body>    
+</html>
