@@ -1,0 +1,55 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>网页</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #222;  
+            color: #fff;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            margin: 0;  
+        }  
+  
+        .container {  
+            text-align: center;  
+        }  
+  
+        h1 {  
+            font-size: 3em;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+        }  
+  
+        .button-link {  
+            display: inline-block;  
+            padding: 10px 20px;  
+            font-size: 1em;  
+            margin: 10px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            text-decoration: none;  
+            color: #fff;  
+            background-color: #4CAF50; /* Green */  
+            text-align: center;  
+            transition: all 0.3s ease;  
+        }  
+  
+        .button-link:hover {  
+            background-color: #45a049; /* Darker green */  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>网页</h1>  
+        <a href="https://yunmo-my.sharepoint.com/:w:/g/personal/shool_yunmo_onmicrosoft_com/ERXtkUl8rKtKtwuFE3BXhk4BDwUpGD6BK3mttl-n3J0OAg?e=0X4IIr" class="button-link" id="button1">1</a>  
+        <a href="https://yunmo-my.sharepoint.com/:w:/g/personal/shool_yunmo_onmicrosoft_com/EV0UUsovQ9dMomPblBZbpG8B-zbmNo0gXeXw1egL_rzFPw?e=YUb8iz" class="button-link" id="button2">2</a>  
+    </div>  
+</body>  
+</html>
